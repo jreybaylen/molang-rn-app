@@ -13,13 +13,15 @@ import {
   StatusBar,
   useColorScheme
 } from 'react-native';
+import { NativeBaseProvider } from 'native-base';
+import 'react-native-gesture-handler';
 
-import {Root} from './src/Root';
-
+import Root from './src/Root';
 
 import {
   Colors
 } from 'react-native/Libraries/NewAppScreen';
+
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -29,17 +31,14 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-          <Root/>
-      </ScrollView>
-    </SafeAreaView>
+    <NativeBaseProvider>
+        <StatusBar
+          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+          backgroundColor={backgroundStyle.backgroundColor}
+        />
+        <Root/>
+    </NativeBaseProvider>
+
   );
 };
 

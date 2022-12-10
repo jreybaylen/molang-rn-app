@@ -1,15 +1,20 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-// import HomeScreen from './screens/Home'
-// import { SignLanguage } from './screens/SignLanguage'
+import Home from './screens/Home'
+import SignLanguage from './screens/SignLanguage'
 
-const Root = () => {
-  return (
-    <View>
+const Tab = createBottomTabNavigator();
 
-    </View>
-  )
-}
+export default function Root () {
+    return (
+      <NavigationContainer>
+          <Tab.Navigator>
+            <Tab.Screen name="Home" component={Home}/>
+            <Tab.Screen name="Lesson" component={SignLanguage}/>
+          </Tab.Navigator>
+      </NavigationContainer>
+    )
+  }
 
-export { Root }

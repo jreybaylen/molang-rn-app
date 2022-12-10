@@ -1,13 +1,14 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { Text, View, SafeAreaView } from 'react-native'
 
-export function SignLanguage () {
+export default function SignLanguage (prop) {
   return (
-    <Text>Hello There</Text>
+    <SafeAreaView
+      contentInsetAdjustmentBehavior="automatic"
+    >
+      <View>
+        <Text>Nice</Text>
+      </View>
+    </SafeAreaView>
   )
 }
-
-
-
-
-
