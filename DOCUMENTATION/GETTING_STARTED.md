@@ -20,3 +20,12 @@ Production
 - Build > Rebuild Project
 - Build > Build APK
 - Locate APK (Lower right corner of Android Studio) or get the APK here "android\app\build\outputs\apk\debug"
+
+
+    Routing
+
+  const router = useNavigation()
+
+  const greetings = () => {
+    router.navigate('Greetings')
+  }

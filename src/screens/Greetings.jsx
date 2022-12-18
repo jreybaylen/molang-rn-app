@@ -1,8 +1,10 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { Text, View } from 'react-native'
 
 export default function Greetings() {
   return (
-    <div>Greetings</div>
+    <View>
+      <Text>Greetings!</Text>
+    </View>
   )
 }

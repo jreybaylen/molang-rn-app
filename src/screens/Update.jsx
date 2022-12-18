@@ -1,10 +1,10 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-export default function LtoZ() {
+export default function Update() {
   return (
     <View>
-      <Text>L to Z</Text>
+      <Text>Updates</Text>
     </View>
   )
 }

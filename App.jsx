@@ -15,12 +15,11 @@ import {
 } from 'react-native';
 import { NativeBaseProvider } from 'native-base';
 import 'react-native-gesture-handler';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import Root from './src/Root';
 
-import {
-  Colors
-} from 'react-native/Libraries/NewAppScreen';
+
 
 
 const App = () => {

@@ -1,11 +1,19 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet } from 'react-native'
+import { SafeAreaView, StyleSheet, Text } from 'react-native'
 import { Button, VStack, HStack } from 'native-base'
+import { useNavigation } from '@react-navigation/native'
+
+import AtoK from './AtoK'
+import LtoZ from './LtoZ'
+import Update from './Update'
 
 export default function Home (prop) {
-  const handlePressButton = () => {
-    alert(123)
+  const router = useNavigation()
+
+  const greetings = () => {
+    router.navigate('Greetings')
   }
+
   return (
     <SafeAreaView
       contentInsetAdjustmentBehavior="automatic"
@@ -14,18 +22,20 @@ export default function Home (prop) {
         <HStack space={2}>
           <Button
             size="lg"
-            onPress={ handlePressButton }
+            onPress={ greetings }
             title="Learn More"
             accessibilityLabel="Learn more about this purple button"
+            style={style.click}
           >
-            Greetings!
+            <Text>Greetings!</Text>
           </Button>
           <Button
             size="lg"
             title="A to K"
             accessibilityLabel="Learn more about this purple button"
+            style={style.click}
           >
-            A to K
+            <Text>A to K</Text>
           </Button>
         </HStack>
         <HStack space={2}>
@@ -34,14 +44,14 @@ export default function Home (prop) {
             title="L to Z"
             accessibilityLabel="Learn more about this purple button"
           >
-            L to Z
+           <Text>L to Z</Text>
           </Button>
           <Button
             size="lg"
             title="Update"
             accessibilityLabel="Learn more about this purple button"
           >
-            Update
+            <Text>Update</Text>
           </Button>
         </HStack>
       </VStack>
@@ -50,8 +60,9 @@ export default function Home (prop) {
 }
 
 const style = StyleSheet.create ({
-  button: {
-    flex:1,
+  click: {
+    backgroundColor: 'blue',
+    width: '100%',
   }
 })
 
