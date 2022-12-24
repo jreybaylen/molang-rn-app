@@ -7,15 +7,15 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme
-} from 'react-native';
+// import {
+//   SafeAreaView,
+//   ScrollView,
+//   StatusBar,
+//   useColorScheme
+// } from 'react-native';
 import { NativeBaseProvider } from 'native-base';
-import 'react-native-gesture-handler';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+// import 'react-native-gesture-handler';
+// import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 import Root from './src/Root';
 
@@ -23,18 +23,14 @@ import Root from './src/Root';
 
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
     <NativeBaseProvider>
-        <StatusBar
+        {/* <StatusBar
           barStyle={isDarkMode ? 'light-content' : 'dark-content'}
           backgroundColor={backgroundStyle.backgroundColor}
-        />
+        /> */}
         <Root/>
     </NativeBaseProvider>
 

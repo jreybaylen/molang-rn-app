@@ -1,68 +1,150 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text } from 'react-native'
+import { SafeAreaView, StyleSheet, Text, Image } from 'react-native'
 import { Button, VStack, HStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 
-import AtoK from './AtoK'
-import LtoZ from './LtoZ'
-import Update from './Update'
-
-export default function Home (prop) {
+export default function Home () {
   const router = useNavigation()
-
-  const greetings = () => {
+  const handleNavigateAtoZ = () => {
+    router.navigate('What do I know?')
+  }
+  const handleNavigateGreetings = () => {
     router.navigate('Greetings')
+  }
+  const handleNavigateUpdates = () => {
+    router.navigate('Updates')
   }
 
   return (
     <SafeAreaView
       contentInsetAdjustmentBehavior="automatic"
     >
-      <VStack space={2} alignItems="center">
-        <HStack space={2}>
+      <HStack
+        space={ 2 }
+        alignItems="center"
+        justifyContent="center"
+        style={ styles.hstack }
+      >
+        <VStack>
           <Button
-            size="lg"
-            onPress={ greetings }
+            title="A to z"
+            style={ {
+              ...styles.button,
+              ...styles.borderRight
+            } }
+            onPress={ handleNavigateAtoZ }
+          >
+            <Text
+              style={ {
+                ...styles.heading,
+                ...styles.headingLeft
+              } }
+            >
+              Alphabet
+            </Text>
+            <Image
+              resizeMode="cover"
+              source={require('../assets/AtoZ.png')}
+            />
+          </Button>       
+        </VStack>
+        <VStack>
+          <Button
             title="Learn More"
-            accessibilityLabel="Learn more about this purple button"
-            style={style.click}
+            style={ {
+              ...styles.mb5,
+              ...styles.button,
+              ...styles.buttonHeightHalf,
+              ...styles.borderLeft,
+              ...styles.borderBottom
+            } }
+            onPress={ handleNavigateGreetings }
           >
-            <Text>Greetings!</Text>
-          </Button>
+            <Text
+              style={ styles.heading }
+            >
+              Greetings!
+            </Text>
+            <Image
+              resizeMode="cover"
+              style={ styles.image }
+              source={require('../assets/greetings.png')}
+            />
+          </Button>   
           <Button
-            size="lg"
-            title="A to K"
-            accessibilityLabel="Learn more about this purple button"
-            style={style.click}
-          >
-            <Text>A to K</Text>
-          </Button>
-        </HStack>
-        <HStack space={2}>
-          <Button
-            size="lg"
-            title="L to Z"
-            accessibilityLabel="Learn more about this purple button"
-          >
-           <Text>L to Z</Text>
-          </Button>
-          <Button
-            size="lg"
             title="Update"
-            accessibilityLabel="Learn more about this purple button"
+            style={ {
+              ...styles.button,
+              ...styles.buttonHeightHalf,
+              ...styles.borderLeft,
+              ...styles.borderTop
+            } }
+            onPress={ handleNavigateUpdates }
           >
-            <Text>Update</Text>
+            <Text
+              style={ styles.heading }
+            >
+              Updates
+            </Text>
+            <Image
+              resizeMode="cover"
+              style={ styles.image }
+              source={require('../assets/updated.png')}
+            />
           </Button>
-        </HStack>
-      </VStack>
+        </VStack>
+      </HStack>
     </SafeAreaView>
   )
 }
 
-const style = StyleSheet.create ({
-  click: {
-    backgroundColor: 'blue',
-    width: '100%',
+const styles = StyleSheet.create ({
+  hstack: {
+    height: '100%'
+  },
+  button: {
+    height: '100%',
+    position: 'relative',
+    backgroundColor: '#87cefa'
+  },
+  buttonHeightHalf: {
+    height: '50%'
+  },
+  mb5: {
+    marginBottom: 5
+  },
+  heading: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    position: 'absolute',
+    top: '-12%'
+  },
+  headingLeft: {
+    marginLeft: 35
+  },
+  image: {
+    right: '15%',
+    position: 'relative'
+  },
+  borderRight: {
+    borderRightWidth: 2,
+    borderTopRightRadius: 0,
+    borderRightColor: '#000',
+    borderBottomRightRadius: 0
+  },
+  borderLeft: {
+    borderLeftWidth: 2,
+    borderLeftColor: '#000'
+  },
+  borderTop: {
+    borderTopWidth: 2,
+    borderTopColor: '#000',
+    borderTopLeftRadius: 10
+  },
+  borderBottom: {
+    borderBottomWidth: 2,
+    borderBottomColor: '#000',
+    borderBottomLeftRadius: 10
   }
 })
 

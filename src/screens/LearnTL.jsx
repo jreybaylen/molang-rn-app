@@ -1,10 +1,10 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-export default function AtoK() {
+export default function LearnTL() {
   return (
     <View>
-      <Text>A to K</Text>
+      <Text>Quiz</Text>
     </View>
   )
 }

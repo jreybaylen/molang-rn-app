@@ -5,7 +5,7 @@
   "scripts": {
     "android": "npx react-native run-android",
     "ios": "npx react-native run-ios",
-    "start": "npx react-native start",
+    "start": "npx react-native start --reset-cache",
     "test": "jest",
     "lint": "eslint .",
     "ios:prod": "npx react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios",
@@ -17,6 +17,8 @@
     "@react-navigation/material-bottom-tabs": "^6.2.8",
     "@react-navigation/native": "^6.1.0",
     "@react-navigation/stack": "^6.3.8",
+    "@rneui/base": "^4.0.0-rc.7",
+    "@rneui/themed": "^4.0.0-rc.7",
     "native-base": "^3.4.25",
     "react": "18.1.0",
     "react-native": "0.70.6",
