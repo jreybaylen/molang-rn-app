@@ -1,42 +1,32 @@
 import React from 'react'
-import { Text, View, SafeAreaView, StyleSheet, FlatList } from 'react-native'
 import { Button } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
+import { Text, SafeAreaView, StyleSheet } from 'react-native'
 
-// import AtoZ from './AtoZ'
-
-export default function SignLanguage (prop) {
+export default function SignLanguage () {
   const router = useNavigation()
-  // const button = () => {AtoZ.button}
+  const handleTapLearn = () => {
+    router.navigate('LEARN THE LETTERS')
+  }
+  
   return (
     <SafeAreaView
       contentInsetAdjustmentBehavior="automatic"
     >
       <Button
-      onPress={ () => router.navigate('LEARN THE LETTERS') }
-      style={style.quiz}
+        style={ style.quiz }
+        onPress={ handleTapLearn }
       >
-        <Text style={style.quizText} >LEARN THE LETTERS</Text>
-      </Button>  
-      {/* <View style={style.container}>
-      <FlatList
-        numColumns={3}
-        keyExtractor={(item) => item.id}
-        data={button}
-        renderItem={({item}) => (
-          <Button
-            onPress={ Try }
-            title={item.letter}
-            style={style.item}
-          >
-            <Text style={style.text}>{item.letter}</Text>
-          </Button>   
-        )}
-      />
-      </View> */}
+        <Text
+          style={ style.quizText }
+        >
+          LEARN THE LETTERS
+        </Text>
+      </Button>
     </SafeAreaView>
   )
 }
+
 const style = StyleSheet.create ({
   container: {
     paddingTop: 15, 

@@ -1,7 +1,11 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, Image } from 'react-native'
 import { Button, VStack, HStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
+import { SafeAreaView, StyleSheet, Text, Image } from 'react-native'
+
+import aToZSrc from '../assets/AtoZ.png'
+import updatedSrc from '../assets/updated.png'
+import greetingsSrc from '../assets/greetings.png'
 
 export default function Home () {
   const router = useNavigation()
@@ -44,7 +48,7 @@ export default function Home () {
             </Text>
             <Image
               resizeMode="cover"
-              source={require('../assets/AtoZ.png')}
+              source={ aToZSrc }
             />
           </Button>       
         </VStack>
@@ -68,7 +72,7 @@ export default function Home () {
             <Image
               resizeMode="cover"
               style={ styles.image }
-              source={require('../assets/greetings.png')}
+              source={ greetingsSrc }
             />
           </Button>   
           <Button
@@ -89,7 +93,7 @@ export default function Home () {
             <Image
               resizeMode="cover"
               style={ styles.image }
-              source={require('../assets/updated.png')}
+              source={ updatedSrc }
             />
           </Button>
         </VStack>
