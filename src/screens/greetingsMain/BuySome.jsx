@@ -3,9 +3,9 @@ import { Text, View,StyleSheet, FlatList  } from 'react-native'
 import { Button, HStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 
-import GreetingsData from '../../data/GreetingsData'
+import { GreetingsData } from '../../data/greetings'
 
-export default function BuySome() {
+export default function BuySome () {
   const router = useNavigation()
   const Back = () => {
   router.navigate( 'Greetings And Common Phrases' )
@@ -16,11 +16,10 @@ export default function BuySome() {
   const FooterComponent = () => {
     return (
       <HStack
-        style={ {
-              ...styles.hStack
-            } }
+        style={ styles.hStack }
       >
-        <Button onPress={ Try }
+        <Button
+          onPress={ Try }
           title={ styles.letter }
           style={ {
             ...styles.quizButton,

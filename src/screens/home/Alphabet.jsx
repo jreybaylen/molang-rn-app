@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
-import { Text, View, StyleSheet, FlatList } from 'react-native'
+import React from 'react'
 import { Button } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
+import { Text, View, StyleSheet, FlatList } from 'react-native'
 
-import AlphabetData from '../../data/Data'
+import { AlphabetData } from '../../data/alphabet'
 
 export default function Alphabet () {
   const router = useNavigation()

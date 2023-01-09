@@ -1,4 +1,4 @@
-// import LetterA from '../assets/a.png'
+import LetterA from '../assets/a.png'
 import LetterB from '../assets/b.png'
 import LetterC from '../assets/c.png'
 import LetterD from '../assets/d.png'
@@ -25,12 +25,11 @@ import LetterX from '../assets/x.png'
 import LetterY from '../assets/y.png'
 import LetterZ from '../assets/z.png'
 
-
-const AlphabetData = [
+export const AlphabetData = [
     {
         id: '1',
         letter: 'A',
-        path: require('../assets/a.png'),
+        path: LetterA,
         description: 'Close all your fingers like a fist-bomb and face your finger in front of a person you are communicating with.'
     },
     {
@@ -182,65 +181,5 @@ const AlphabetData = [
         letter: 'Z',
         path: LetterZ,
         description: 'Holding up the index finger of your dominant hand, palm facing out with the rest of the fingers drawn into a fist, and tracing the letter "Z" with your index in the air.'
-    },
+    }
 ]
-
-export default AlphabetData
-
-// const GreetingsData =[
-//     {
-//         id: '1',
-//         name: 'How are you?',
-//         path: require('../assets/a2how-are-you.gif')
-//     },
-//     {
-//         id: '2',
-//         name: 'How are you?',
-//         path: require('../assets/a2how-are-you.gif')
-//     },
-//     {
-//         id: '3',
-//         name: 'Wonderful!',
-//         path: require('../assets/a3wonderful.gif')
-//     },
-//     {
-//         id: '4',
-//         name: 'Nice to meet you',
-//         path: require('../assets/a4nice-to-meet-you.gif')
-//     },
-//     {
-//         id: '5',
-//         name: 'I love you',
-//         path: require('../assets/a5ily.gif')
-//     },
-//     {
-//         id: '6',
-//         name: 'Thank you',
-//         path: require('../assets/a6thank-you.gif')
-//     },
-//     {
-//         id: '7',
-//         name: 'Please',
-//         path: require('../assets/a7please.gif')
-//     },
-//     {
-//         id: '8',
-//         name: 'Sorry',
-//         path: require('../assets/a8sorry.gif')
-//     },
-//     {
-//         id: '9',
-//         name: 'No',
-//         path: require('../assets/a9no.gif')
-//     },
-//     {
-//         id: '10',
-//         name: '',
-//         path: require('../assets/a10yes.gif')
-//     },
-//     // {
-//     //     id: '11',
-//     //     name: '',
-//     //     path: require('../assets/')
-//     // },
-// ]
