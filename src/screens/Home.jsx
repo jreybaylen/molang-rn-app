@@ -1,19 +1,19 @@
 import React from 'react'
+import { SafeAreaView, StyleSheet, Text, Image, View } from 'react-native'
 import { Button, VStack, HStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
-import { SafeAreaView, StyleSheet, Text, Image } from 'react-native'
 
-import aToZSrc from '../assets/AtoZ.png'
-import updatedSrc from '../assets/updated.png'
-import greetingsSrc from '../assets/greetings.png'
+import AtoZImage from '../assets/AtoZ3.png'
+import GreetingsImage from '../assets/greetings3.png'
+import Update from '../assets/updated3.png'
 
 export default function Home () {
   const router = useNavigation()
   const handleNavigateAtoZ = () => {
-    router.navigate('What do I know?')
+    router.navigate('Alphabets')
   }
   const handleNavigateGreetings = () => {
-    router.navigate('Greetings')
+    router.navigate('Greetings And Common Phrases')
   }
   const handleNavigateUpdates = () => {
     router.navigate('Updates')
@@ -27,74 +27,127 @@ export default function Home () {
         space={ 2 }
         alignItems="center"
         justifyContent="center"
-        style={ styles.hstack }
+        style={ { 
+          ...styles.height 
+        }}
       >
-        <VStack>
+        <VStack 
+          style={ {
+            ...styles.width,
+            ...styles.height
+          } }
+        >
           <Button
             title="A to z"
             style={ {
+              ...styles.height,
               ...styles.button,
               ...styles.borderRight
             } }
             onPress={ handleNavigateAtoZ }
           >
-            <Text
-              style={ {
-                ...styles.heading,
-                ...styles.headingLeft
-              } }
-            >
-              Alphabet
-            </Text>
-            <Image
-              resizeMode="cover"
-              source={ aToZSrc }
-            />
+            <VStack>            
+              <View>
+                <Text
+                  style={ {
+                    ...styles.color,
+                    ...styles.heading,
+                    ...styles.headingLeft
+                  } }
+                >
+                  Alphabets
+                </Text>
+              </View>
+              <View
+                style={ styles.imageLeftConHeight }
+              >
+                <Image
+                  style={ styles.image }
+                  source={ AtoZImage }
+                />
+              </View>
+            </VStack>
           </Button>       
         </VStack>
-        <VStack>
+        <VStack
+          style={ {
+            ...styles.width,
+            ...styles.height
+          } }
+        >
           <Button
             title="Learn More"
             style={ {
               ...styles.mb5,
               ...styles.button,
-              ...styles.buttonHeightHalf,
+              ...styles.rbutton,
               ...styles.borderLeft,
-              ...styles.borderBottom
+              ...styles.borderBottom,
+              ...styles.buttonHeightHalf
             } }
             onPress={ handleNavigateGreetings }
           >
-            <Text
-              style={ styles.heading }
+            <View
+              style={ {
+                ...styles.paddingTop,
+                  ...styles.headerContainer
+              } }
             >
-              Greetings!
-            </Text>
-            <Image
-              resizeMode="cover"
-              style={ styles.image }
-              source={ greetingsSrc }
-            />
+              <Text
+                style={ {
+                  ...styles.color,
+                  ...styles.headingG,
+                } }
+              >
+               Greetings And Common Phrases
+              </Text>    
+            </View>
+            <View
+                style={ styles.rightImage }
+            >
+              <Image
+                style={ {
+                  ...styles.image
+                } }
+                source={ GreetingsImage }
+              />
+            </View>
           </Button>   
           <Button
             title="Update"
             style={ {
               ...styles.button,
-              ...styles.buttonHeightHalf,
+              ...styles.rbutton,
+              ...styles.borderTop,
               ...styles.borderLeft,
-              ...styles.borderTop
+              ...styles.buttonHeightHalf
             } }
             onPress={ handleNavigateUpdates }
           >
-            <Text
-              style={ styles.heading }
+            <View
+              style={ {
+                ...styles.marginBottom,
+                  ...styles.headerContainer
+              } }
             >
-              Updates
-            </Text>
-            <Image
-              resizeMode="cover"
-              style={ styles.image }
-              source={ updatedSrc }
-            />
+              <Text
+                style={ {
+                  ...styles.color, 
+                  ...styles.heading,
+                  ...styles.paddingTop
+                } }
+              >
+                Updates
+              </Text>
+            </View>
+            <View
+                style={ styles.rightImage }
+            >
+              <Image
+                style={ styles.image }
+                source={ Update }
+              />
+            </View>
           </Button>
         </VStack>
       </HStack>
@@ -103,32 +156,34 @@ export default function Home () {
 }
 
 const styles = StyleSheet.create ({
-  hstack: {
+  height: { 
     height: '100%'
   },
+  width: {
+    width: '50%'
+  },
+  color: {
+    color: '#000'
+  },
   button: {
-    height: '100%',
-    position: 'relative',
     backgroundColor: '#87cefa'
   },
-  buttonHeightHalf: {
-    height: '50%'
+  paddingTop: {
+    paddingTop: '5%'
   },
   mb5: {
-    marginBottom: 5
+    marginBottom: '4%'
+  },
+  headingG: {
+    fontSize: 26,
+    height: '200%',
+    marginTop: '40%',
+    fontWeight: 'bold'
   },
   heading: {
     fontSize: 26,
     fontWeight: 'bold',
-    position: 'absolute',
-    top: '-12%'
-  },
-  headingLeft: {
-    marginLeft: 35
-  },
-  image: {
-    right: '15%',
-    position: 'relative'
+    position: 'absolute'
   },
   borderRight: {
     borderRightWidth: 2,
@@ -149,7 +204,42 @@ const styles = StyleSheet.create ({
     borderBottomWidth: 2,
     borderBottomColor: '#000',
     borderBottomLeftRadius: 10
-  }
+  },
+  rbutton: {
+    height: '50%',
+    alignItems: 'flex-end',
+    justifyContent: 'center'
+  },
+  headerContainer: {
+    height: '30%',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  marginBottom: {
+    marginBottom: '20%'
+  },
+  imageConHeight: {
+    height: '70%'
+  },  
+  rightImage: {
+    height: '70%',
+    paddingTop: '30%'
+  }, 
+  paddingRight: {
+    marginLeft: '6%'
+  },
+  image: {
+    resizeMode: 'cover',
+    height: '100%',
+  },
+  imageLeftConHeight: {
+    height: '100%',
+    paddingTop: '80%'
+  },
+  headingLeft: {
+    marginLeft: '20%',
+    marginTop: '20%'
+  },
 })
 
 

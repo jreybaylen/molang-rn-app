@@ -4,7 +4,7 @@ import { Text, View } from 'react-native'
 export default function Update() {
   return (
     <View>
-      <Text>Updates</Text>
+      <Text>Leaderboard</Text>
     </View>
   )
 }
