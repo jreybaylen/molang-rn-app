@@ -29,44 +29,6 @@ export default function Root () {
 						/>
 					)
 				) }
-				<Stack.Screen 
-					name="Updates" 
-					component={ Updates }
-				/>
-				<Stack.Screen 
-					name="leaderboard" 
-					component={ Leaderboard }
-				/>
-				<Stack.Screen 
-					name="Greetings" 
-					component={ Greetings }
-					options={ { headerShown: false } } 
-				/>
-				<Stack.Screen 
-					name="School" 
-					component={ School }
-					options={ { headerShown: false } } 
-				/>
-				<Stack.Screen 
-					name="Travel" 
-					component={ Travel }
-					options={ { headerShown: false } } 
-				/>
-				<Stack.Screen 
-					name="Buying Something" 
-					component={ BuySome }
-					options={ { headerShown: false } } 
-				/>
-				<Stack.Screen 
-					name="Greetings Content" 
-					component={ GreetingsContent }
-					options={ { headerShown: false } } 
-				/>
-				<Stack.Screen 
-					name="AlphabetContent" 
-					component={ AlphabetContent }
-					options={ { headerShown: false } } 
-				/>
 			</Stack.Navigator>      
 		</NavigationContainer>
 	)

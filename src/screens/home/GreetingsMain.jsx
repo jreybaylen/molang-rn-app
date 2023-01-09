@@ -18,7 +18,7 @@ export default function GreetingsMain () {
     router.navigate( 'Travel' ) 
   }
   const BuySome = () => {
-    router.navigate( 'Buying Something' ) 
+    router.navigate( 'BuySome' ) 
   }
   
   return (
