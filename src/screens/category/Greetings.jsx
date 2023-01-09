@@ -59,21 +59,27 @@ export default function Greetings() {
         data={ GREETINGS_DATA }
         // numColumns={ 1 }
         keyExtractor={( item ) => item.id }
-        renderItem={({ item }) => (
-          <Button
-            onPress={ () => router.navigate( 'Greetings Content', item ) }
-            title={ item.letter }
-            style={ styles.button }
-          >
-            <View style={ styles.textContainer }>
-              <Text
-                style={ styles.text }
-              >
-                { item.name }
-              </Text>
-            </View>
-          </Button>
-        )}
+        renderItem={({ item }) => {
+          const handleTestRoutes = () => {
+            router.navigate( 'Greetings Content', item )
+          }
+
+          return (
+            <Button
+              onPress={ handleTestRoutes }
+              title={ item.letter }
+              style={ styles.button }
+            >
+              <View style={ styles.textContainer }>
+                <Text
+                  style={ styles.text }
+                >
+                  { item.name }
+                </Text>
+              </View>
+            </Button>
+          )
+        }}
         ListFooterComponent={ FooterComponent }
         contentContainerStyle={ styles.flatlist }
       />

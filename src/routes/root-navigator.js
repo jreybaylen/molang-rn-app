@@ -1,14 +1,14 @@
-import Home from '../screens/Home'
+import Home from '../screens/home'
 import Alphabet from '../screens/home/Alphabet'
-import GreetingsMain from '../screens/home/GreetingsMain'
-import Updates from '../screens/home/Update'
+import Greetings from '../screens/home/Greetings'
+import WhatsNew from '../screens/home/WhatsNew'
 import Leaderboard from '../screens/home/Leaderboard'
-import Greetings from '../screens/greetingsMain/Greetings'
-import School from '../screens/greetingsMain/School'
-import Travel from '../screens/greetingsMain/Travel'
-import BuySome from '../screens/greetingsMain/BuySome'
-import GreetingsContent from '../screens/content/GreetingsMainContent'
-import AlphabetContent from '../screens/content/AlphabetContent'
+import CategoryGreetings from '../screens/category/Greetings'
+import School from '../screens/category/School'
+import Travel from '../screens/category/Travel'
+import BuySome from '../screens/category/BuySome'
+import CategoryContent from '../screens/shared/CategoryContent'
+import Letters from '../screens/shared/Letters'
 
 const options = {
     headerShown: false
@@ -22,19 +22,19 @@ export const ROOT_NAVIGATOR = [
         options
     },
     {
-        id: 'alphabets',
-        name: 'Alphabets',
+        id: 'alphabet',
+        name: 'Alphabet',
         component: Alphabet
     },
     {
-        id: 'main-greetings',
+        id: 'greetings',
         name: 'Greetings And Common Phrases',
-        component: GreetingsMain
+        component: Greetings
     },
     {
         id: 'Updates',
         name: 'Updates', 
-        component: Updates 
+        component: WhatsNew 
     },
     {
         id: 'Leaderboard',
@@ -42,39 +42,39 @@ export const ROOT_NAVIGATOR = [
         component: Leaderboard
     },
     {
-        id: 'Greetings',
+        id: 'category-reetings',
         name: 'Greetings',
-        component: Greetings,
+        component: CategoryGreetings,
         options
     },
     {
-        id: 'School',
+        id: 'school',
         name: 'School',
         component: School,
         options
     },
     {
-        id: 'Travel',
+        id: 'travel',
         name: 'Travel',
         component: Travel,
         options
     },
     {
-        id: 'BuySome',
+        id: 'buy-some',
         name: 'BuySome',
         component: BuySome,
         options
     },
     {
-        id: 'Greetings Content',
+        id: 'category-content',
         name: 'Greetings Content',
-        component: GreetingsContent,
+        component: CategoryContent,
         options
     },
     {
-        id: 'AlphabetContent',
+        id: 'alphabet-content',
         name: 'AlphabetContent',
-        component: AlphabetContent,
+        component: Letters,
         options
-    },
+    }
 ]

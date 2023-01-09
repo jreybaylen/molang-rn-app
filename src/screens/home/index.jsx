@@ -3,14 +3,14 @@ import { SafeAreaView, StyleSheet, Text, Image, View } from 'react-native'
 import { Button, VStack, HStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 
-import AtoZImage from '../assets/AtoZ3.png'
-import GreetingsImage from '../assets/greetings3.png'
-import Update from '../assets/updated3.png'
+import AtoZImage from '../../assets/AtoZ3.png'
+import GreetingsImage from '../../assets/greetings3.png'
+import Update from '../../assets/updated3.png'
 
 export default function Home () {
   const router = useNavigation()
   const handleNavigateAtoZ = () => {
-    router.navigate('Alphabets')
+    router.navigate('Alphabet')
   }
   const handleNavigateGreetings = () => {
     router.navigate('Greetings And Common Phrases')
@@ -55,7 +55,7 @@ export default function Home () {
                     ...styles.headingLeft
                   } }
                 >
-                  Alphabets
+                  Alphabet
                 </Text>
               </View>
               <View

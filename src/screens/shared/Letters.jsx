@@ -8,7 +8,7 @@ export default function AlphabetContent() {
   const route = useRoute()
   const router = useNavigation()
   const Back = () => {
-    router.navigate( 'Alphabets' ) 
+    router.navigate( 'Alphabet' ) 
   }
 
   return (
