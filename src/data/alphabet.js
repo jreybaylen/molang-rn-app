@@ -25,7 +25,7 @@ import LetterX from '../assets/x.png'
 import LetterY from '../assets/y.png'
 import LetterZ from '../assets/z.png'
 
-export const AlphabetData = [
+export const ALPHABET_DATA = [
     {
         id: '1',
         letter: 'A',

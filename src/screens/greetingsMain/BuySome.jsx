@@ -3,7 +3,7 @@ import { Text, View,StyleSheet, FlatList  } from 'react-native'
 import { Button, HStack } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 
-import { GreetingsData } from '../../data/greetings'
+import { GREETINGS_DATA } from '../../data/greetings'
 
 export default function BuySome () {
   const router = useNavigation()
@@ -55,7 +55,7 @@ export default function BuySome () {
       style={ styles.container }
     >
       <FlatList
-        data={ GreetingsData }
+        data={ GREETINGS_DATA }
         // numColumns={ 1 }
         keyExtractor={( item ) => item.id }
         renderItem={({ item }) => (

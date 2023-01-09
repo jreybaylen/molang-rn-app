@@ -3,7 +3,7 @@ import { Button } from 'native-base'
 import { useNavigation } from '@react-navigation/native'
 import { Text, View, StyleSheet, FlatList } from 'react-native'
 
-import { AlphabetData } from '../../data/alphabet'
+import ALPHABET_DATA from '../../data/alphabet'
 
 export default function Alphabet () {
   const router = useNavigation()

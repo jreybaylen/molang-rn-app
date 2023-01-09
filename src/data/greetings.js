@@ -8,7 +8,7 @@ import wonderfulSrc from '../assets/a3wonderful.gif'
 import howAreYouSrc from '../assets/a2how-are-you.gif'
 import niceMeetYouSrc from '../assets/a4nice-to-meet-you.gif'
 
-export const GreetingsData =[
+export const GREETINGS_DATA = [
     {
         id: '1',
         path: howAreYouSrc,
